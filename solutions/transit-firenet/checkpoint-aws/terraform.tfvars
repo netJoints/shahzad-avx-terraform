@@ -4,8 +4,8 @@
 
 # Aviatrix Controller
 username        = "admin"
-password        = "Aviatrix123!"
-controller_ip   = "3.221.120.255"
+password        = ""
+controller_ip   = ""
 account_name    = "shahzad-aws" # Your Access Account
 
 # Transit FireNet Variables
