@@ -3,19 +3,21 @@
 # Replace the values with your own
 
 # Aviatrix Controller
-username        = "tfadmin"
-password        = "Aviatrix123#"
-controller_ip   = "3.135.102.46"
-account_name    = "TM-AWS" # Your Access Account
+username        = "admin"
+password        = "Aviatrix123!"
+controller_ip   = "3.221.120.255"
+account_name    = "shahzad-aws" # Your Access Account
 
 # Transit FireNet Variables
 avx_transit_gw  = "transit-firenet-gw"
-fw_image        = "Check Point CloudGuard IaaS All-In-One"
+fw_image        = "Check Point CloudGuard IaaS Next-Gen Firewall with Threat Prevention"
 
 /*
 firewall_images = {
   palo           = "Palo Alto Networks VM-Series Next-Generation Firewall (BYOL)"
   checkpoint     = "Check Point CloudGuard IaaS Next-Gen Firewall w. Threat Prevention & SandBlast BYOL"
   checkpoint     = "Check Point CloudGuard IaaS All-In-One"
+  checkpoint     = “Check Point CloudGuard IaaS All-In-One”
+  checkpoint	 = "Check Point CloudGuard IaaS Next-Gen Firewall with Threat Prevention"
 }
 */

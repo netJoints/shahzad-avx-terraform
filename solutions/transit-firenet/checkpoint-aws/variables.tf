@@ -26,7 +26,7 @@ variable "region" {
 }
 
 variable "key_name" {
-  default = "avtx-key"
+  default = "shahzad-ohio-kp"
 }
 
 variable account_name {
@@ -34,7 +34,7 @@ variable account_name {
 }
 
 variable "avx_transit_gw" {
-  default = "transit-gw"
+  default = "av-tr-fnet"
 }
 variable avx_gw_size {
   default = "c5.xlarge"

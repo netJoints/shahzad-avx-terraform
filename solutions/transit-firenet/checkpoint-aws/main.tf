@@ -23,7 +23,7 @@ resource "aviatrix_vpc" "transit_firenet" {
   account_name         = var.account_name
   region               = var.region
   name                 = "avx-firenet-vpc-${var.region}"
-  cidr                 = "10.1.0.0/16"
+  cidr                 = "10.20.0.0/16"
   #cidr                 = cidrsubnet("10.0.0.0/8", 8, random_integer.subnet.result)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = true
@@ -35,7 +35,8 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
   account_name         = var.account_name
   region               = var.region
   name                 = "${var.region}-avx-spoke-vpc-${count.index + 1}"
-  cidr                 = cidrsubnet("10.0.1.0/8", 8, random_integer.subnet.result + count.index)
+  #cidr                 = cidrsubnet("10.20.21.0/8", 8, random_integer.subnet.result + count.index)
+  cidr			= cidrsubnet("10.21.0.0/12", 4, count.index+1) 
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
@@ -84,7 +85,7 @@ resource "aviatrix_firewall_instance" "firewall_instance_az1" {
   firewall_size                 = var.firewall_size
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[0].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[1].cidr
-  key_name                      = "avtx-dev"
+  key_name                      = "shahzad-ohio-kp"
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
 
@@ -97,7 +98,7 @@ resource "aviatrix_firewall_instance" "firewall_instance_az2" {
   firewall_size                 = var.firewall_size
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[2].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[3].cidr
-  key_name                      = "avtx-dev"
+  key_name                      = "shahzad-ohio-kp"
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
 
