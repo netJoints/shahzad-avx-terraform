@@ -11,14 +11,15 @@
 
 
 # Aviatrix Controller
-username              = "controllerusername"
-password              = "yourpassword"      # These are here for development ONLY will be Environment Variables
-controller_ip         = "123.123.123.123"   # These are here for development ONLY will be Environment Variables
-azure_account_name    = "TM-Azure"          # This is the name of the Access Account per Cloud setup in your controller
+username              = "admin"
+password              = "Password123!"      # These are here for development ONLY will be Environment Variables
+controller_ip         = "A.B.C.D"   # These are here for development ONLY will be Environment Variables
+azure_account_name    = "Saad_Azure"          # This is the name of the Access Account per Cloud setup in your controller
 
 # Transit FireNet Variables
-avx_transit_gw   = "Transit-FireNet-GW" # Name of the AVX Transit Gateway
-fw_image         = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
+avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
+#fw_image         = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
+fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
 fw_image_version = "8040.900294.0593"
 # Azure Region 
 region          = "East US"
@@ -34,5 +35,3 @@ vpc_count       = 2
 
 # Azure Cloud Type - Aviatrix
 cloud_type      = 8
-
-
