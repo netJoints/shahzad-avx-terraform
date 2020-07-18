@@ -25,9 +25,9 @@ variable "hpe" {
   default = false
 }
 
-#variable "region" {
-#  default = "us-east-2"
-#}
+variable "region" {
+  default = ""
+}
 
 #variable "key_name" {
 #  default = "avtx-key"
