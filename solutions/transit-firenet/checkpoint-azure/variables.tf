@@ -3,8 +3,8 @@ variable "vpc_count" {
 }
 
 #variable "username" {
-  type    = string
-  default = ""
+#  type    = string
+#  default = ""
 #}
 
 #variable "password" {
