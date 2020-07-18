@@ -22,7 +22,7 @@ avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
 fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
 fw_image_version = "8040.900294.0593"
 # Azure Region 
-region          = "East US"
+# region          = "East US"
 
 # Azure GW Size
 avx_gw_size     = "Standard_B2ms"
