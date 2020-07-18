@@ -19,8 +19,8 @@ azure_account_name    = "shahzad-azure"          # This is the name of the Acces
 # Transit FireNet Variables
 avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
 #fw_image         = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
-fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
-fw_image_version = "8040.900294.0593"
+#fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
+#fw_image_version = "8040.900294.0593"
 
 # Azure GW Size
 # avx_gw_size     = "Standard_B2ms"

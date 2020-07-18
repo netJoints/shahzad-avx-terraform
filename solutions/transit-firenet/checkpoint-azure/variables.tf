@@ -49,7 +49,7 @@ variable firewall_size {
 }
 
 variable fw_image_version {
-  default = ""
+  default = "8040.900294.0593"
 }
 
 variable fw_image {
