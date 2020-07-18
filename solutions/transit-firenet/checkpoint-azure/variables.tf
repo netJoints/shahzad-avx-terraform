@@ -17,9 +17,9 @@ variable "vpc_count" {
 #  default = ""
 #}
 
-variable "cloud_type" {
-  default = 8
-}
+#variable "cloud_type" {
+#  default = 8
+#}
 
 variable "hpe" {
   default = false
