@@ -40,13 +40,13 @@ variable "azure_account_name" {
 variable "avx_transit_gw" {
   default = "transit-gw"
 }
-#variable avx_gw_size {
-#  default = "c5.xlarge"
-#}
+variable avx_gw_size {
+  default = ""
+}
 
-#variable firewall_size {
-#  default = "c5.xlarge"
-#}
+variable firewall_size {
+  default = ""
+}
 
 variable fw_image_version {
   default = ""
