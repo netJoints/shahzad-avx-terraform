@@ -21,14 +21,12 @@ avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
 #fw_image         = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
 fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
 fw_image_version = "8040.900294.0593"
-# Azure Region 
-# region          = "East US"
 
 # Azure GW Size
-avx_gw_size     = "Standard_B2ms"
+# avx_gw_size     = "Standard_B2ms"
 
 # Azure FW Instnace Size
-firewall_size   = "Standard_D3_v2"
+# firewall_size   = "Standard_D3_v2"
 
 # Azure VPC Count for Azure 
 vpc_count       = 2

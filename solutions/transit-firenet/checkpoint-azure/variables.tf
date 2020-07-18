@@ -41,11 +41,11 @@ variable "avx_transit_gw" {
   default = "transit-gw"
 }
 variable avx_gw_size {
-  default = ""
+  default = "Standard_B2ms"
 }
 
 variable firewall_size {
-  default = ""
+  default = "Standard_D3_v2"
 }
 
 variable fw_image_version {
