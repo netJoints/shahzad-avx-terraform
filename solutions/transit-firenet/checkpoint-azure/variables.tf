@@ -2,24 +2,24 @@ variable "vpc_count" {
   default = 2
 }
 
-#variable "username" {
-#  type    = string
-#  default = ""
-#}
+variable "username" {
+  type    = string
+  default = ""
+}
 
-#variable "password" {
-#  type    = string
-#  default = ""
-#}
+variable "password" {
+  type    = string
+  default = ""
+}
 
-#variable "controller_ip" {
-#  type    = string
-#  default = ""
-#}
+variable "controller_ip" {
+  type    = string
+  default = ""
+}
 
-#variable "cloud_type" {
-#  default = 8
-#}
+variable "cloud_type" {
+  default = 8
+}
 
 variable "hpe" {
   default = false
@@ -33,9 +33,9 @@ variable "hpe" {
 #  default = "avtx-key"
 #}
 
-#variable "azure_account_name" {
-#  default = "8"
-#}
+variable "azure_account_name" {
+  default = ""
+}
 
 variable "avx_transit_gw" {
   default = "transit-gw"
