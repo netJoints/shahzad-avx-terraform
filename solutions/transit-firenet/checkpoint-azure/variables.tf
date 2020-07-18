@@ -2,51 +2,51 @@ variable "vpc_count" {
   default = 2
 }
 
-variable "username" {
+#variable "username" {
   type    = string
   default = ""
-}
+#}
 
-variable "password" {
-  type    = string
-  default = ""
-}
+#variable "password" {
+#  type    = string
+#  default = ""
+#}
 
-variable "controller_ip" {
-  type    = string
-  default = ""
-}
+#variable "controller_ip" {
+#  type    = string
+#  default = ""
+#}
 
 variable "cloud_type" {
-  default = 1
+  default = 8
 }
 
 variable "hpe" {
   default = false
 }
 
-variable "region" {
-  default = "us-east-2"
-}
+#variable "region" {
+#  default = "us-east-2"
+#}
 
-variable "key_name" {
-  default = "avtx-key"
-}
+#variable "key_name" {
+#  default = "avtx-key"
+#}
 
-variable "azure_account_name" {
-  default = ""
-}
+#variable "azure_account_name" {
+#  default = "8"
+#}
 
 variable "avx_transit_gw" {
   default = "transit-gw"
 }
-variable avx_gw_size {
-  default = "c5.xlarge"
-}
+#variable avx_gw_size {
+#  default = "c5.xlarge"
+#}
 
-variable firewall_size {
-  default = "c5.xlarge"
-}
+#variable firewall_size {
+#  default = "c5.xlarge"
+#}
 
 variable fw_image_version {
   default = ""
