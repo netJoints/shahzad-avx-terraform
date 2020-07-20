@@ -1,7 +1,3 @@
-variable "vpc_count" {
-  default = 2
-}
-
 variable "username" {
   type    = string
   default = ""
@@ -15,6 +11,10 @@ variable "password" {
 variable "controller_ip" {
   type    = string
   default = ""
+}
+
+variable "vpc_count" {
+  default = 2
 }
 
 variable "cloud_type" {
@@ -38,7 +38,7 @@ variable "azure_account_name" {
 }
 
 variable "avx_transit_gw" {
-  default = "AZUvir-trgw"
+  default = "azu-nv-trgw"
 }
 variable avx_gw_size {
   default = "Standard_B2ms"
