@@ -38,7 +38,7 @@ variable "azure_account_name" {
 }
 
 variable "avx_transit_gw" {
-  default = "transit-gw"
+  default = "AZUvir-trgw"
 }
 variable avx_gw_size {
   default = "Standard_B2ms"
@@ -53,6 +53,7 @@ variable fw_image_version {
 }
 
 variable fw_image {
-  #default = "Check Point CloudGuard IaaS Next-Gen Firewall w. Threat Prevention & SandBlast BYOL"
   default = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
+  #default  = "Check Point CloudGuard IaaS Next-Gen Firewall w. Threat Prevention & SandBlast BYOL"
+  #fw_image = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License" 
 }       

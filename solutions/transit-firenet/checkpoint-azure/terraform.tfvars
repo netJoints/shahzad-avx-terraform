@@ -7,26 +7,15 @@
 # Replace the values with your own
 # terraform plan -var-file transit_firenet.tfvars
 # standardDv2Family
-#
-
 
 # Aviatrix Controller
-username              = "admin"
-password              = "Aviatrix123!"      # These are here for development ONLY will be Environment Variables
-controller_ip         = "3.221.120.255"   # These are here for development ONLY will be Environment Variables
-azure_account_name    = "shahzad-azure"          # This is the name of the Access Account per Cloud setup in your controller
+username              = ""
+password              = ""    # These are here for development ONLY will be Environment Variables
+controller_ip         = ""    # These are here for development ONLY will be Environment Variables
+azure_account_name    = ""    # This is the name of the Access Account per Cloud setup in your controller
 
-# Transit FireNet Variables
-avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
-#fw_image         = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
-#fw_image        = "Check Point CloudGuard IaaS Single Gateway R80.40 - Pay As You Go (NGTP)"
-#fw_image_version = "8040.900294.0593"
-
-# Azure GW Size
-# avx_gw_size     = "Standard_B2ms"
-
-# Azure FW Instnace Size
-# firewall_size   = "Standard_D3_v2"
+# Aviatrix Transit FireNet Variables
+# avx_transit_gw   = "AZNV-Transit-AGW" # Name of the AVX Transit Gateway
 
 # Azure VPC Count for Azure 
 vpc_count       = 2
