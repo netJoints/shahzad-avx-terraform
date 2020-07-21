@@ -18,7 +18,7 @@ resource "aviatrix_vpc" "transit_firenet" {
   account_name         = var.azure_account_name
   region               = var.region
   name                 = "azu-nv-transit"
-  cidr                 = "172.20.10.0/23"
+  cidr                 = "10.20.0.0/16"
   #cidr                 = cidrsubnet("10.0.0.0/8", 8, random_integer.subnet.result)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = true
@@ -33,7 +33,7 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
   #name                 = "Spoke-VNET-${count.index + 1}"
   name                 = "azu-nv-spk${count.index + 1}"
   #cidr                 = cidrsubnet("172.20.1.0/20", 4, random_integer.subnet.result + count.index)
-  cidr                 = cidrsubnet("172.20.1.0/20", 4, 1 + count.index)
+  cidr                 = cidrsubnet("10.20.1.0/24", 4, 1 + count.index)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
@@ -61,7 +61,7 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
   cloud_type         = var.cloud_type
   account_name       = var.azure_account_name
   #gw_name            = "Spoke-GW-${count.index}"
-  gw_name            = "azu-nv-spk${count.index + 1}-avxgw"
+  gw_name            = "azu-nv-spk${count.index + 1}"
   vpc_id             = aviatrix_vpc.avx_spoke_vpc[count.index].vpc_id
   vpc_reg            = var.region
   gw_size            = var.avx_gw_size

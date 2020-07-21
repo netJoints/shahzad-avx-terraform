@@ -38,7 +38,7 @@ variable "azure_account_name" {
 }
 
 variable "avx_transit_gw" {
-  default = "azu-nv-trgw"
+  default = "azu-nv-transit"
 }
 variable avx_gw_size {
   default = "Standard_B2ms"
