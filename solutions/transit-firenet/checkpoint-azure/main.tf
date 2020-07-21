@@ -33,7 +33,7 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
   #name                 = "Spoke-VNET-${count.index + 1}"
   name                 = "azu-nv-spk${count.index + 1}"
   #cidr                 = cidrsubnet("172.20.1.0/20", 4, random_integer.subnet.result + count.index)
-  cidr                 = cidrsubnet("10.20.1.0/24", 4, 1 + count.index)
+  cidr                 = cidrsubnet("10.20.1.0/20", 4, 1 + count.index)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
