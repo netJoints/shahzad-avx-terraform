@@ -9,13 +9,13 @@
 # standardDv2Family
 
 # Aviatrix Controller
-username              = ""
-password              = ""    # These are here for development ONLY will be Environment Variables
-controller_ip         = ""    # These are here for development ONLY will be Environment Variables
-azure_account_name    = ""    # This is the name of the Access Account per Cloud setup in your controller
+# username              = ""
+# password              = ""    # These are here for development ONLY will be Environment Variables
+# controller_ip         = ""    # These are here for development ONLY will be Environment Variables
+# azure_account_name    = ""    # This is the name of the Access Account per Cloud setup in your controller
 
 # Azure VPC Count for Azure 
-vpc_count       = 2
+# vpc_count       = 2
 
 # Azure Cloud Type - Aviatrix
-cloud_type      = 8
+# cloud_type      = 8

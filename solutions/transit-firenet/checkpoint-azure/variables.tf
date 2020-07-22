@@ -17,10 +17,12 @@ variable "vpc_count" {
   default = 2
 }
 
+# Type is 1 for AWS and 8 for Azure
 variable "cloud_type" {
   default = 8
 }
 
+# HPE: High Performance Encryption
 variable "hpe" {
   default = false
 }
@@ -29,12 +31,14 @@ variable "region" {
   default = "East US"
 }
 
+# key_name is valid for AWS only
 #variable "key_name" {
 #  default = "avtx-key"
 #}
 
+# This is the name of the Access Account per Cloud setup in your controller
 variable "azure_account_name" {
-  default = ""
+  default = "shahzad-azure"
 }
 
 variable "avx_transit_gw" {
