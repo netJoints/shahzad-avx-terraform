@@ -1,3 +1,6 @@
+# username, password and controller_ip is configured in terraform cloud variable section
+# this will keep these secure and not part of github code
+
 variable "username" {
   type    = string
   default = ""
