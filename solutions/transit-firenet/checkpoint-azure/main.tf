@@ -75,14 +75,13 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
 resource "aviatrix_firewall_instance" "firewall_instance_1" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  #firewall_name                 = "avx-checkpoint-fw1"
-  firewall_name                 = "azu-nv-cp1"
+  firewall_name                 = "azu-virginia-cp1"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = var.fw_image_version
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[2].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[0].cidr
-  username                      = "admin"
+  username                      = "shahzad"
   password                      = var.password
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
@@ -91,14 +90,13 @@ resource "aviatrix_firewall_instance" "firewall_instance_1" {
 resource "aviatrix_firewall_instance" "firewall_instance_2" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = "${aviatrix_transit_gateway.transit_firenet_gw.gw_name}-hagw" 
-  #firewall_name                 = "avx-checkpoint-fw2"
-  firewall_name                 = "azu-nv-cp2"
+  firewall_name                 = "azu-virginia-cp2"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = var.fw_image_version
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[3].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[1].cidr
-  username                      = "admin"
+  username                      = "shahzad"
   password                      = var.password
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "shahzad-terraform",
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"githubIssues.createInsertFormat": "url"
+	}
+}
