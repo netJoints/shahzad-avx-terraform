@@ -81,7 +81,7 @@ resource "aviatrix_firewall_instance" "firewall_instance_1" {
   firewall_image_version        = var.fw_image_version
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[2].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[0].cidr
-  username                      = "shahzad"
+  username                      = "admin"
   password                      = var.password
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
@@ -96,7 +96,7 @@ resource "aviatrix_firewall_instance" "firewall_instance_2" {
   firewall_image_version        = var.fw_image_version
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[3].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[1].cidr
-  username                      = "shahzad"
+  username                      = "admin"
   password                      = var.password
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
