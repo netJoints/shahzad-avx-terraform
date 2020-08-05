@@ -31,7 +31,7 @@ variable "hpe" {
 }
 
 variable "region" {
-  default = "East US"
+  default = "West US"
 }
 
 # key_name is valid for AWS only

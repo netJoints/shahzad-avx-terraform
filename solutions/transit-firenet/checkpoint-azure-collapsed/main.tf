@@ -17,7 +17,7 @@ resource "aviatrix_vpc" "transit_firenet" {
   cloud_type           = var.cloud_type
   account_name         = var.azure_account_name
   region               = var.region
-  name                 = "azu-nv-transit"
+  name                 = "azu-iad-transit"
   cidr                 = "10.20.0.0/16"
   #cidr                 = cidrsubnet("10.0.0.0/8", 8, random_integer.subnet.result)
   aviatrix_transit_vpc = false
@@ -31,7 +31,7 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
   account_name         = var.azure_account_name
   region               = var.region
   #name                 = "Spoke-VNET-${count.index + 1}"
-  name                 = "azu-nv-spk${count.index + 1}"
+  name                 = "azu-iad-spk${count.index + 1}"
   #cidr                 = cidrsubnet("172.20.1.0/20", 4, random_integer.subnet.result + count.index)
   cidr                 = cidrsubnet("10.20.1.0/20", 4, 1 + count.index)
   aviatrix_transit_vpc = false
@@ -61,7 +61,7 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
   cloud_type         = var.cloud_type
   account_name       = var.azure_account_name
   #gw_name            = "Spoke-GW-${count.index}"
-  gw_name            = "azu-nv-spk${count.index + 1}"
+  gw_name            = "azu-iad-spk${count.index + 1}"
   vpc_id             = aviatrix_vpc.avx_spoke_vpc[count.index].vpc_id
   vpc_reg            = var.region
   gw_size            = var.avx_gw_size
@@ -75,7 +75,7 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
 resource "aviatrix_firewall_instance" "firewall_instance_1" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  firewall_name                 = "azu-virginia-cp1"
+  firewall_name                 = "azu-iad-cp1"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = var.fw_image_version
@@ -90,7 +90,7 @@ resource "aviatrix_firewall_instance" "firewall_instance_1" {
 resource "aviatrix_firewall_instance" "firewall_instance_2" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = "${aviatrix_transit_gateway.transit_firenet_gw.gw_name}-hagw" 
-  firewall_name                 = "azu-virginia-cp2"
+  firewall_name                 = "azu-iad-cp2"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = var.fw_image_version
@@ -135,30 +135,14 @@ resource "aviatrix_firenet" "firewall_net" {
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy1" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
   #inspected_resource_name      = "SPOKE:Spoke-GW-0"
-  inspected_resource_name      = "SPOKE:azu-nv-spk1"
+  inspected_resource_name      = "SPOKE:azu-iad-spk1"
   depends_on = [aviatrix_firenet.firewall_net]
 }
 
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy2" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
   #inspected_resource_name      = "SPOKE:Spoke-GW-1"
-  inspected_resource_name      = "SPOKE:azu-nv-spk2"
+  inspected_resource_name      = "SPOKE:azu-iad-spk2"
   depends_on = [aviatrix_firenet.firewall_net]
 }
 
-
-/*
-
-resource "aviatrix_firewall_instance" "firewall_instance_1" {
-    firewall_name = "AZNV-CP-1"
-    firewall_size = "Standard_D3_v2"
-    vpc_id = "AVX6-East-Transit-FireNet:rg-av-AVX6-East-Transit-FireNet-177147"
-    firewall_image = "Check Point CloudGuard IaaS Single Gateway R80.40 - Bring Your Own License"
-
-    egress_subnet = "10.1.0.0/28"
-    firenet_gw_name = "AVX6-Transit-GW"
-    iam_role = null
-    bootstrap_bucket_name = null
-    management_subnet = "10.1.0.0/28"
-}
-*/
