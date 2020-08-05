@@ -12,6 +12,7 @@ resource "random_integer" "subnet" {
   max = 250
 }
 
+############
 # Create Aviatrix Transit Firenet vnet
 resource "aviatrix_vpc" "transit_firenet" {
   cloud_type           = var.cloud_type
