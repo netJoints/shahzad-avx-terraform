@@ -1,4 +1,4 @@
-provider "aviatrix" {
+provider "aviatrixsystems" {
 
   username                = var.username
   password                = var.password
