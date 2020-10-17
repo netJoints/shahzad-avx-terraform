@@ -75,13 +75,13 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
 resource "aviatrix_firewall_instance" "firewall_instance_1" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  firewall_name                 = "avx-palo-fw1"
+  firewall_name                 = "azu-palo-fw1"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = "9.1.0"
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[0].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[1].cidr
-  username                      = "avtx1234"
+  username                      = "shahzad"
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
 
@@ -89,13 +89,13 @@ resource "aviatrix_firewall_instance" "firewall_instance_1" {
 resource "aviatrix_firewall_instance" "firewall_instance_2" {
   vpc_id                        = aviatrix_vpc.transit_firenet.vpc_id
   firenet_gw_name               = "${aviatrix_transit_gateway.transit_firenet_gw.gw_name}-hagw" 
-  firewall_name                 = "avx-palo-fw2"
+  firewall_name                 = "azu-palo-fw2"
   firewall_image                = var.fw_image
   firewall_size                 = var.firewall_size
   firewall_image_version        = "9.1.0"
   management_subnet             = aviatrix_vpc.transit_firenet.subnets[2].cidr
   egress_subnet                 = aviatrix_vpc.transit_firenet.subnets[3].cidr
-  username                      = "avtx1234"
+  username                      = "shahzad"
   depends_on = [aviatrix_spoke_gateway.avtx_spoke_gw]
 }
 
@@ -131,12 +131,12 @@ resource "aviatrix_firenet" "firewall_net" {
 # Create an Aviatrix Transit FireNet Policy
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy1" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:West-VNET-GW-0"
+  #inspected_resource_name      = "SPOKE:West-VNET-GW-0"
   depends_on = [aviatrix_firenet.firewall_net]
 }
 
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy2" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:West-VNET-GW-1"
+  #inspected_resource_name      = "SPOKE:West-VNET-GW-1"
   depends_on = [aviatrix_firenet.firewall_net]
 }
