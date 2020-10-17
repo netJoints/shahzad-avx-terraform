@@ -4,21 +4,21 @@ variable "vpc_count" {
 
 variable "username" {
   type    = string
-  default = ""
+  default = "admin"
 }
 
 variable "password" {
   type    = string
-  default = ""
+  default = "Shahzad123!"
 }
 
 variable "controller_ip" {
   type    = string
-  default = ""
+  default = "avtx.shahzad.link"
 }
 
 variable "cloud_type" {
-  default = 1
+  default = 8
 }
 
 variable "hpe" {
@@ -26,7 +26,7 @@ variable "hpe" {
 }
 
 variable "region" {
-  default = "us-east-2"
+  default = "us-west"
 }
 
 variable "key_name" {
@@ -34,7 +34,7 @@ variable "key_name" {
 }
 
 variable "azure_account_name" {
-  default = ""
+  default = "admin"
 }
 
 variable "avx_transit_gw" {

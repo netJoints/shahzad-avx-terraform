@@ -4,7 +4,7 @@ provider "aviatrix" {
   password      = var.password
   controller_ip = var.controller_ip
 
-  version = "~> 2.13"
+  version = "~> 2.17"
 }
 
 resource "random_integer" "subnet" {

@@ -11,10 +11,10 @@
 
 
 # Aviatrix Controller
-username        = "tfdev"
-password        = "YOURPASS#123"      # These are here for development ONLY will be Environment Variables
-controller_ip   = "3.999.102.46"      # These are here for development ONLY will be Environment Variables
-azure_account_name    = "TM-Azure"    # This is the name of the Access Account per Cloud setup in your controller
+username        = "admin"
+password        = "Shahzad123!"             # These are here for development ONLY will be Environment Variables
+controller_ip   = "avtx.shahzad.link"       # These are here for development ONLY will be Environment Variables
+azure_account_name    = "shahzad-azure"     # This is the name of the Access Account per Cloud setup in your controller
 
 # Transit FireNet Variables
 avx_transit_gw  = "Azure-West-Transit-GW"
