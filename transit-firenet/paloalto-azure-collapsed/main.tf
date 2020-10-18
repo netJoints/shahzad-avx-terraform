@@ -30,7 +30,7 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
   account_name         = var.azure_account_name
   region               = var.region
   name                 = "azu-uswest-vnet-spk1"
-  cidr                 = "10.${count.index+1}.0.0/16"
+  cidr                 = "10.${count.index+31}.0.0/16"
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
