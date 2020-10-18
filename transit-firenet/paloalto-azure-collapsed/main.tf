@@ -19,21 +19,30 @@ resource "aviatrix_vpc" "transit_firenet" {
   region               = var.region
   name                 = "azu-uswest-transit-vnet"
   cidr                 = "10.30.0.0/16"
-  #cidr                 = cidrsubnet("10.0.0.0/8", 8, random_integer.subnet.result)
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = true
 }
 
-# Create Aviatrix Transit spoke vnets 
+# Create Aviatrix Transit spoke vnet-1
 resource "aviatrix_vpc" "avx_spoke_vpc" {
   count                = var.vpc_count
   cloud_type           = var.cloud_type
   account_name         = var.azure_account_name
   region               = var.region
-  #name                 = "Spoke-VNET-${count.index + 1}"
-  name                 = "azu-uswest-vnet-spk${count.index + 1}"
-  #cidr                 = cidrsubnet("172.20.1.0/20", 4, random_integer.subnet.result + count.index)
-  cidr                 = cidrsubnet("10.30.1.0/20", 4, 1 + count.index)
+  name                 = "azu-uswest-vnet-spk1"
+  cidr                 = "10.31.0.0/16"
+  aviatrix_transit_vpc = false
+  aviatrix_firenet_vpc = false
+}
+
+# Create Aviatrix Transit spoke vnet-2
+resource "aviatrix_vpc" "avx_spoke_vpc" {
+  count                = var.vpc_count
+  cloud_type           = var.cloud_type
+  account_name         = var.azure_account_name
+  region               = var.region
+  name                 = "azu-uswest-vnet-spk2"
+  cidr                 = "10.32.0.0/16"
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
@@ -60,7 +69,7 @@ resource "aviatrix_spoke_gateway" "avtx_spoke_gw" {
   count              = var.vpc_count
   cloud_type         = var.cloud_type
   account_name       = var.azure_account_name
-  gw_name            = "azu-uswest-spkgw-${count.index}"
+  gw_name            = "azu-uswest-spkgw-${count.index+1}"
   vpc_id             = aviatrix_vpc.avx_spoke_vpc[count.index].vpc_id
   vpc_reg            = var.region
   gw_size            = var.avx_gw_size
@@ -130,12 +139,12 @@ resource "aviatrix_firenet" "firewall_net" {
 # Create an Aviatrix Transit FireNet Policy
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy1" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-0"
+  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-1"
   depends_on = [aviatrix_firenet.firewall_net]
 }
 
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy2" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-1"
+  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-2"
   depends_on = [aviatrix_firenet.firewall_net]
 }
