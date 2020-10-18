@@ -130,12 +130,12 @@ resource "aviatrix_firenet" "firewall_net" {
 # Create an Aviatrix Transit FireNet Policy
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy1" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:azu-uswest-spk0"
+  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-0"
   depends_on = [aviatrix_firenet.firewall_net]
 }
 
 resource "aviatrix_transit_firenet_policy" "transit_firenet_policy2" {
   transit_firenet_gateway_name = aviatrix_transit_gateway.transit_firenet_gw.gw_name
-  inspected_resource_name      = "SPOKE:azu-uswest-spk1"
+  inspected_resource_name      = "SPOKE:azu-uswest-spkgw-1"
   depends_on = [aviatrix_firenet.firewall_net]
 }
