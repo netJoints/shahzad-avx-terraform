@@ -23,26 +23,14 @@ resource "aviatrix_vpc" "transit_firenet" {
   aviatrix_firenet_vpc = true
 }
 
-# Create Aviatrix Transit spoke vnet-1
-resource "aviatrix_vpc" "avx_spoke_vnet-1" {
+# Create Aviatrix Transit spoke vnet
+resource "aviatrix_vpc" "avx_spoke_vpc" {
   count                = var.vpc_count
   cloud_type           = var.cloud_type
   account_name         = var.azure_account_name
   region               = var.region
   name                 = "azu-uswest-vnet-spk1"
-  cidr                 = "10.31.0.0/16"
-  aviatrix_transit_vpc = false
-  aviatrix_firenet_vpc = false
-}
-
-# Create Aviatrix Transit spoke vnet-2
-resource "aviatrix_vpc" "avx_spoke_vnet-2" {
-  count                = var.vpc_count
-  cloud_type           = var.cloud_type
-  account_name         = var.azure_account_name
-  region               = var.region
-  name                 = "azu-uswest-vnet-spk2"
-  cidr                 = "10.32.0.0/16"
+  cidr                 = "10.31+[count.index].0.0/16"
   aviatrix_transit_vpc = false
   aviatrix_firenet_vpc = false
 }
