@@ -24,7 +24,7 @@ resource "aviatrix_vpc" "transit_firenet" {
 }
 
 # Create Aviatrix Transit spoke vnet-1
-resource "aviatrix_vpc" "avx_spoke_vpc" {
+resource "aviatrix_vpc" "avx_spoke_vnet-1" {
   count                = var.vpc_count
   cloud_type           = var.cloud_type
   account_name         = var.azure_account_name
@@ -36,7 +36,7 @@ resource "aviatrix_vpc" "avx_spoke_vpc" {
 }
 
 # Create Aviatrix Transit spoke vnet-2
-resource "aviatrix_vpc" "avx_spoke_vpc" {
+resource "aviatrix_vpc" "avx_spoke_vnet-2" {
   count                = var.vpc_count
   cloud_type           = var.cloud_type
   account_name         = var.azure_account_name
