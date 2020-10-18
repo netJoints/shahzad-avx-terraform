@@ -18,7 +18,7 @@ azure_account_name    = "shahzad-azure"     # This is the name of the Access Acc
 
 # Transit FireNet Variables
 avx_transit_gw  = "Azure-West-Transit-GW"
-fw_image        = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1"
+fw_image        = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 2"
 
 # Azure Region 1
 region          = "West US"

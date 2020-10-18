@@ -31,7 +31,7 @@ variable "hpe" {
 }
 
 variable "region" {
-  default = "East US"
+  default = "West US"
 }
 
 # key_name is valid for AWS only
@@ -45,7 +45,7 @@ variable "azure_account_name" {
 }
 
 variable "avx_transit_gw" {
-  default = "azu-iad-transit"
+  default = "azu-transit-gw-uswest"
 }
 variable avx_gw_size {
   default = "Standard_B2ms"
