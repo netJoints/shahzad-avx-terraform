@@ -56,5 +56,5 @@ variable firewall_size {
 }
 
 variable fw_image {
-  default = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 2"
+  default = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 1"
 }       
