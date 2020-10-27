@@ -3,7 +3,7 @@ provider "aviatrix" {
   username                = var.username
   password                = var.password
   controller_ip           = var.controller_ip
-  version                 = "2.15.1"
+  version                 = "2.17"
   skip_version_validation = false
 }
 
