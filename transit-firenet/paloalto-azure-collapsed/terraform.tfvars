@@ -11,26 +11,26 @@
 
 
 # Aviatrix Controller
-username        = "admin"
-password        = "Shahzad123!"             # These are here for development ONLY will be Environment Variables
-controller_ip   = "avtx.shahzad.link"       # These are here for development ONLY will be Environment Variables
-azure_account_name    = "shahzad-azure"     # This is the name of the Access Account per Cloud setup in your controller
+# username        = "admin"
+# password        = "Shahzad123!"             # These are here for development ONLY will be Environment Variables
+# controller_ip   = "avtx.shahzad.link"       # These are here for development ONLY will be Environment Variables
+# azure_account_name    = "shahzad-azure"     # This is the name of the Access Account per Cloud setup in your controller
 
 # Transit FireNet Variables
-avx_transit_gw  = "Azure-West-Transit-GW"
-fw_image        = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 2"
+# avx_transit_gw  = "Azure-West-Transit-GW"
+# fw_image        = "Palo Alto Networks VM-Series Next-Generation Firewall Bundle 2"
 
 # Azure Region 1
-region          = "West US"
+# region          = "West US"
 
 # Azure GW Size
-avx_gw_size     = "Standard_B2ms"
+# avx_gw_size     = "Standard_B2ms"
 
 # Azure FW Instnace Size
-firewall_size   = "Standard_D3_v2"
+# firewall_size   = "Standard_D3_v2"
 
 # Azure VPC Count for Azure 
-vpc_count       = 2
+# vpc_count       = 2
 
 # Firewall Images to use for provisioning - replace as needed
 /*
